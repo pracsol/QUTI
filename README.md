@@ -2,6 +2,7 @@
 uTorrent API facade for QBittorrent
 
 DESCRIPTION
+
 uTorrent offers a REST api with which other programs integrate, such as Media Center Master (MCM). This script runs an interface that mimics the uTorrent API but translates it to QBitTorrent, enabling drop-in replacement of uTorrent with QBT, if preferred. 
 
 It supports the following methods:
@@ -21,6 +22,7 @@ TABLE OF CONTENTS
 3. LICENSE
 
 INSTALLATION
+
 Since this has been built specifically to front-end QBT, it will also include background on setting up your QBT environment. 
 
 Preparing the Base Environment
@@ -70,6 +72,7 @@ Configure QUTI
 Open the quti.py file and verify some of the environment variables at the top of the script. You want to make sure the port numbers match what QBT is running on (e.g. 8080) and what your other applications are expecting to find uTorrent on (e.g. 8081). Change these accordingly along with your server IP and the working directory path in the script.
 
 RECOMMENDED SUPPLEMENTS
+
 It's wise to also install some sort of VPN on the server you're using for QBT, and that's a bit outside of the scope of these instructions, but installing a VPN with a kill switch (so Internet traffic can't occur without the tunnel being up) is advisable. 
 
 This repo includes a shell script that can be run hourly to test for a working openVPN tunnel, and whether UFW, QBT and QUTI services are all running. This script creates a daily log file in one of the working folders per the naming conventions above. It does require modification of the sudoers.d content to ensure your service account can restart the openVPN service, etc. If your VPN tunnel has a habit of timing out, this can be very helpful. 

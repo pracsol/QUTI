@@ -177,7 +177,7 @@ def build_utlist(qbtlist, client):
     # Loop through torrent details and build a UT-formatted list
     torrents_list = []
     torrent_list = []
-    start = time.clock()
+    start = time.perf_counter()
     for torrent in qbtlist:
         torrent_detail = client.get_torrent(torrent['hash'])
         utstatuscode = convert_torrent_status(torrent['state'], torrent['force_start'])
@@ -208,7 +208,7 @@ def build_utlist(qbtlist, client):
 
     # add the torrent list to the UT list
     utlist += ','.join(torrents_list)
-    end = time.clock()
+    end = time.perf_counter()
     # add a footer to the UT list
     # MCM doesn't care about the UT list cache ID
     # so am using this to clock the performance of list grabs
